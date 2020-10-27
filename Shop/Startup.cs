@@ -18,7 +18,7 @@ namespace Shop
         // called by .net core automatically 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews(); // we have to add support to MVC
+            services.AddControllersWithViews(); // we have to add support to MVC 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
