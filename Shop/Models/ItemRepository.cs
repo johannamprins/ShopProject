@@ -7,7 +7,8 @@ namespace Shop.Models
 {
     public class ItemRepository : IItemRepository
     {
-        private readonly ICategoryRepository _categoryRepository = new CategoryRepository(); // can get acess to getallcategories 
+        private readonly ICategoryRepository _categoryRepository = new CategoryRepository(); // can get acess to getallcategories
+        
         public IEnumerable<Item> GetAllItem => new List<Item>  
         {
             new Item {ItemId = 1, Name = "Item 1", Price = 4.55, Description = "Item 1 description", Category = _categoryRepository.GetAllCategories.ToList()[0],
