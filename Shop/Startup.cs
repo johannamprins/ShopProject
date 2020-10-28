@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection; 
 using Microsoft.Extensions.Hosting;
+using Shop.Models;
 
 namespace Shop
 {
@@ -19,6 +20,14 @@ namespace Shop
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews(); // we have to add support to MVC 
+            // adding our own custom service
+            // NB the addscope method means that an instance will be created in each request and
+            // it will remain active for the whole request! - needed to work with database!
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<IItemRepository, ItemRepository>();
+
+            //controllers create responses in MVC
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

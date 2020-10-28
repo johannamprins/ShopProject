@@ -10,7 +10,7 @@ namespace Shop.Models
         public int CategoryId { get; set; }
         public string CategoryName { get; set; }
         public string CategoryDescription { get; set; }
-        public List<Item> Items { get; set; }
+        public List<Item> Items { get; set; } 
 
         //models store all the data we need to work with our application
         // in order to process the data, we will need repositories - dependency injection
